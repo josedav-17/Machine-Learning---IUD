@@ -1,0 +1,44 @@
+# UNIVERSIDAD DIGITAL DE ANTIIOQUIA - IUD - Machine Learning (Andres Felipe Callejas) - PREICA2602B020059
+# José David Cardona Mazo.
+
+
+
+# S10 - EA1 - Carga y Creación de Dataset
+## INSTALACIÓN NECESARIA DE LIBRERÍAS PARA QUE FUNCIONE EL CÓDIGO DE ESTE PROYECTO EN VS CODE
+# pip install ipykernel pandas datasets
+
+## FUNCIONAMIENTO DEL CODIGO:
+        # Asi funciona el hf_loeader.py:
+
+        #   __init__ ( Clase para conectarse a Hugging Face Hub, obtener un dataset, retornarlo como pandas DataFrame y opcionalmente exportarlo a CSV ) 
+        # Inicializa el cargador con la configuración del dataset.
+        # :param dataset_name: Identificador del dataset en HF (por defecto: 'eatpizzanot/soccer-dataset').
+        # :param name: Subconjunto o tabla del dataset (ej. 'players', 'teams', 'match_stats').
+        # :param split: Split a cargar (ej. 'train', 'test'). Si es None, carga el split por defecto.
+        
+        #  load_data ( Método para cargar los datos desde Hugging Face y retornarlos como DataFrame de pandas )
+        # :return: pd.DataFrame con los datos obtenidos.
+
+        # to_csv ( Obtiene el DataFrame y lo exporta a un archivo CSV dentro de una carpeta )
+        # :param output_folder: Nombre de la carpeta destino.
+        # :param filename: Nombre personalizado del archivo .csv (sin extensión).
+        # :param index: Indica si se incluye el índice de pandas en el CSV.
+        # :return: Ruta completa del archivo generado.
+
+
+        > [!TIP] ANOTACIONES IMPORTANTES DE ESTA PRIMER ENTREGA:
+        # - Se utiliza la librería 'datasets' de Hugging Face para la conexión y descarga de datasets.
+        # - Se utiliza 'pandas' para la manipulación de datos y la exportación a CSV.
+        # - Se maneja la creación de carpetas automáticamente si no existen segun el nombre del la tabla o el dataset.
+        # - Se captura y maneja cualquier error durante la carga del dataset, proporcionando mensajes claros.
+        # - Se permite la carga de datasets con múltiples splits, tomando el primer split disponible si no se especifica uno.
+
+### """
+### Explicación de la transformación:
+### En este flujo se realizó una transformación mínima consistente en:
+### 1. Renombrar las columnas 'name', 'type' y 'country' a castellano ('nombre_liga', 'tipo_liga', 'pais').
+### 2. Filtrar y seleccionar únicamente 4 columnas de interés ('league_id', 'nombre_liga', 'tipo_liga', 'pais').
+### 
+### Este DataFrame transformado fue enviado a la clase `DatasetSummarizer`, generando el reporte 'resumen_transformado.txt'
+### basado estrictamente en los datos modificados.
+### """

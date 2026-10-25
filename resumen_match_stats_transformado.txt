@@ -1,0 +1,108 @@
+================================================================================
+REPORTE Y RESUMEN DEL DATASET: SOCCER DATASET - MATCH_STATS
+================================================================================
+Cantidad de Filas    : 283,834
+Cantidad de Columnas : 39
+--------------------------------------------------------------------------------
+
+1. ESTRUCTURA DE LAS COLUMNAS Y VALORES NULOS:
+--------------------------------------------------------------------------------
+                          Tipo de Dato  Valores Nulos  % Nulos
+fixture_id                       int64              0    0.00%
+home_shots_total               float64          65542   23.09%
+away_shots_total               float64          65542   23.09%
+home_shots_on_goal             float64          65540   23.09%
+away_shots_on_goal             float64          65540   23.09%
+home_shots_inside_box          float64          78760   27.75%
+away_shots_inside_box          float64          78760   27.75%
+home_shots_outside_box         float64          78761   27.75%
+away_shots_outside_box         float64          78761   27.75%
+home_blocked_shots             float64          78040   27.49%
+away_blocked_shots             float64          78040   27.49%
+home_penalties                 float64          86114   30.34%
+away_penalties                 float64          86114   30.34%
+home_corners                   float64          64456   22.71%
+away_corners                   float64          64456   22.71%
+home_yellow_cards              float64          59357   20.91%
+away_yellow_cards              float64          59357   20.91%
+home_red_cards                 float64          64494   22.72%
+away_red_cards                 float64          64489   22.72%
+home_xg                        float64         155088   54.64%
+away_xg                        float64         155088   54.64%
+home_possession                float64         174889   61.62%
+away_possession                float64         174890   61.62%
+home_fouls                     float64         134359   47.34%
+away_fouls                     float64         134359   47.34%
+home_offsides                  float64         145348   51.21%
+away_offsides                  float64         145348   51.21%
+home_pass_accuracy             float64         184272   64.92%
+away_pass_accuracy             float64         184282   64.93%
+home_goals_ht                  float64          16128    5.68%
+away_goals_ht                  float64          16128    5.68%
+home_xg_ht                     float64         283834  100.00%
+away_xg_ht                     float64         283834  100.00%
+stats_fetched_at        datetime64[us]         210162   74.04%
+in_csv                            bool              0    0.00%
+in_pq                             bool              0    0.00%
+xg_covered                        bool              0    0.00%
+xg_nulled                       object          84629   29.82%
+known_at                datetime64[us]              0    0.00%
+--------------------------------------------------------------------------------
+
+2. ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS):
+--------------------------------------------------------------------------------
+                           count          mean           std   min        25%        50%        75%           max
+fixture_id              283834.0  3.522135e+06  1.776583e+07   1.0  153318.25  251342.50  348250.75  1.015678e+08
+home_shots_total        218292.0  1.092093e+01  6.903470e+00   0.0       7.00      11.00      15.00  5.400000e+01
+away_shots_total        218292.0  9.066095e+00  5.954504e+00   0.0       5.00       9.00      13.00  4.700000e+01
+home_shots_on_goal      218294.0  3.915421e+00  2.879276e+00   0.0       2.00       4.00       6.00  2.700000e+01
+away_shots_on_goal      218294.0  3.233671e+00  2.538797e+00   0.0       1.00       3.00       5.00  2.400000e+01
+home_shots_inside_box   205074.0  6.029165e+00  5.041088e+00   0.0       0.00       6.00      10.00  3.900000e+01
+away_shots_inside_box   205074.0  4.867726e+00  4.295236e+00   0.0       0.00       5.00       8.00  3.600000e+01
+home_shots_outside_box  205073.0  3.825740e+00  3.416634e+00   0.0       0.00       4.00       6.00  2.800000e+01
+away_shots_outside_box  205073.0  3.289682e+00  3.011995e+00   0.0       0.00       3.00       5.00  2.500000e+01
+home_blocked_shots      205794.0  2.487478e+00  2.475608e+00   0.0       0.00       2.00       4.00  2.100000e+01
+away_blocked_shots      205794.0  2.064360e+00  2.162968e+00   0.0       0.00       2.00       3.00  1.900000e+01
+home_penalties          197720.0  1.507384e-01  4.388086e-01   0.0       0.00       0.00       0.00  1.600000e+01
+away_penalties          197720.0  1.132055e-01  3.960103e-01   0.0       0.00       0.00       0.00  1.500000e+01
+home_corners            219378.0  4.561624e+00  3.286434e+00   0.0       2.00       4.00       7.00  2.600000e+01
+away_corners            219378.0  3.794264e+00  2.893326e+00   0.0       2.00       4.00       6.00  2.400000e+01
+home_yellow_cards       224477.0  1.702549e+00  1.460630e+00   0.0       0.00       2.00       3.00  1.100000e+01
+away_yellow_cards       224477.0  1.910886e+00  1.551881e+00   0.0       1.00       2.00       3.00  1.200000e+01
+home_red_cards          219340.0  8.475426e-02  2.971438e-01   0.0       0.00       0.00       0.00  4.000000e+00
+away_red_cards          219345.0  1.045932e-01  3.296811e-01   0.0       0.00       0.00       0.00  8.000000e+00
+home_xg                 128746.0  1.259598e+00  5.775841e-01   0.0       0.86       1.18       1.58  5.880000e+00
+away_xg                 128746.0  1.019632e+00  5.213452e-01   0.0       0.65       0.95       1.29  5.910000e+00
+home_possession         108945.0  5.133642e+01  1.066788e+01   0.0      44.00      52.00      59.00  1.000000e+02
+away_possession         108944.0  4.865549e+01  1.066681e+01   0.0      41.00      48.00      56.00  1.000000e+02
+home_fouls              149475.0  1.011384e+01  6.053424e+00   0.0       7.00      11.00      14.00  4.000000e+01
+away_fouls              149475.0  1.022735e+01  6.114733e+00   0.0       7.00      11.00      14.00  3.900000e+01
+home_offsides           138486.0  1.433286e+00  1.561772e+00   0.0       0.00       1.00       2.00  1.600000e+01
+away_offsides           138486.0  1.333182e+00  1.493512e+00   0.0       0.00       1.00       2.00  1.600000e+01
+home_pass_accuracy       99562.0  7.821102e+01  8.027142e+00  11.0      74.00      80.00      84.00  1.000000e+02
+away_pass_accuracy       99552.0  7.688260e+01  8.256634e+00   5.0      72.00      78.00      83.00  1.000000e+02
+home_goals_ht           267706.0  6.535453e-01  8.218751e-01   0.0       0.00       0.00       1.00  1.000000e+01
+away_goals_ht           267706.0  5.158457e-01  7.343806e-01   0.0       0.00       0.00       1.00  9.000000e+00
+home_xg_ht                   0.0           NaN           NaN   NaN        NaN        NaN        NaN           NaN
+away_xg_ht                   0.0           NaN           NaN   NaN        NaN        NaN        NaN           NaN
+--------------------------------------------------------------------------------
+
+3. ESTADÍSTICAS DESCRIPTIVAS (CATEGÓRICAS):
+--------------------------------------------------------------------------------
+             count unique    top    freq
+in_csv      283834      2   True  254939
+in_pq       283834      2   True  191818
+xg_covered  283834      2   True  198376
+xg_nulled   199205      2  False  128771
+--------------------------------------------------------------------------------
+
+4. VISTA PREVIA DE LOS DATOS (HEAD):
+--------------------------------------------------------------------------------
+   fixture_id  home_shots_total  away_shots_total  home_shots_on_goal  away_shots_on_goal  home_shots_inside_box  away_shots_inside_box  home_shots_outside_box  away_shots_outside_box  home_blocked_shots  away_blocked_shots  home_penalties  away_penalties  home_corners  away_corners  home_yellow_cards  away_yellow_cards  home_red_cards  away_red_cards  home_xg  away_xg  home_possession  away_possession  home_fouls  away_fouls  home_offsides  away_offsides  home_pass_accuracy  away_pass_accuracy  home_goals_ht  away_goals_ht  home_xg_ht  away_xg_ht stats_fetched_at  in_csv  in_pq  xg_covered xg_nulled            known_at
+0      287142              10.0               5.0                 6.0                 3.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             1.0             0.0          12.0           3.0                5.0                1.0             1.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            0.0            0.0         NaN         NaN              NaT    True   True       False      True 2017-08-21 19:45:00
+1      287156              10.0              12.0                 4.0                 4.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             0.0             1.0           5.0           1.0                2.0                3.0             0.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            1.0            1.0         NaN         NaN              NaT    True   True       False      True 2017-09-11 19:15:00
+2      287157               8.0               8.0                 4.0                 3.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             0.0             0.0           1.0           3.0                2.0                1.0             0.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            0.0            1.0         NaN         NaN              NaT    True   True       False      True 2017-09-15 16:45:00
+3      287173               6.0               9.0                 3.0                 4.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             0.0             0.0           8.0           3.0                5.0                5.0             0.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            1.0            0.0         NaN         NaN              NaT    True   True       False      True 2017-09-24 16:15:00
+4      287175              13.0               8.0                 7.0                 3.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             0.0             0.0           6.0           1.0                4.0                0.0             0.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            1.0            0.0         NaN         NaN              NaT    True   True       False      True 2017-09-24 19:15:00
+
+================================================================================
