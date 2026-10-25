@@ -1,44 +1,56 @@
-# UNIVERSIDAD DIGITAL DE ANTIIOQUIA - IUD - Machine Learning (Andres Felipe Callejas) - PREICA2602B020059
-# José David Cardona Mazo.
+# Universidad Digital de Antioquia (IU Digital)
+**Curso:** Machine Learning (Docente: Andrés Felipe Callejas)  
+**Código del curso:** PREICA2602B020059  
+**Estudiante:** José David Cardona Mazo  
+
+---
+
+## S10 - EA1: Carga y Creación de Dataset
+
+Este repositorio contiene la implementación para la descarga, transformación, resumen y exportación de datos desde **Hugging Face Hub** hacia un entorno local utilizando **Pandas**.
+
+---
+
+### 📦 Requisitos e Instalación
+
+Para ejecutar el proyecto correctamente en VS Code o en cualquier entorno Python local, instala las dependencias requeridas:
+
+```bash
+pip install ipykernel pandas datasets
+```
+
+---
+
+### ⚙️ Arquitectura y Funcionamiento
+
+#### Módulo `hf_loader.py`
+Clase diseñada para conectarse al Hugging Face Hub, obtener un *dataset*, convertirlo a un `pd.DataFrame` y opcionalmente exportarlo a CSV.
+
+* **`__init__(dataset_name, name, split)`**:
+  * `dataset_name`: Identificador del dataset en HF (por defecto: `'eatpizzanot/soccer-dataset'`).
+  * `name`: Subconjunto o tabla a cargar (ej. `'players'`, `'teams'`, `'match_stats'`).
+  * `split`: Split a cargar (ej. `'train'`, `'test'`). Si es `None`, toma el primero disponible.
+* **`load_data()`**: Carga los datos desde Hugging Face y los retorna en formato `pd.DataFrame`.
+* **`to_csv(output_folder, filename, index)`**: Exporta el DataFrame a un archivo `.csv` dentro del directorio especificado, creando la estructura de carpetas automáticamente si no existe.
+
+> [!NOTE]
+> **Anotaciones de la entrega:**
+> - Uso de la librería `datasets` de Hugging Face para lectura eficiente de datos.
+> - Manejo automático del sistema de archivos al exportar carpetas y rutas.
+> - Manejo de excepciones en la carga del *dataset* con mensajes orientados al desarrollador.
+
+---
+
+### 🔄 Explicación de la Transformación
+
+En este flujo de procesamiento se aplicaron las siguientes etapas sobre el dataset:
+
+1. **Renombrado de Columnas:** Se estandarizaron al español las columnas `'name'`, `'type'` y `'country'` a `'nombre_liga'`, `'tipo_liga'` y `'pais'`.
+2. **Selección y Filtrado:** Se seleccionaron únicamente las 4 columnas de interés para el análisis (`'league_id'`, `'nombre_liga'`, `'tipo_liga'`, `'pais'`).
+3. **Depuración de Nulos:** Se aplicó un filtro con `.dropna()` sobre las columnas clave para asegurar la integridad de la información.
+4. **Resumen de Métricas:** El `DataFrame` procesado fue evaluado mediante la clase `DatasetSummarizer`, generando el reporte `.txt` (`resumen_match_stats_transformado.txt`) que refleja las dimensiones finales y estadísticas del dataset limpio.
 
 
+### DECLARACIÓN DE USO DE LA IA
 
-# S10 - EA1 - Carga y Creación de Dataset
-## INSTALACIÓN NECESARIA DE LIBRERÍAS PARA QUE FUNCIONE EL CÓDIGO DE ESTE PROYECTO EN VS CODE
-# pip install ipykernel pandas datasets
-
-## FUNCIONAMIENTO DEL CODIGO:
-        # Asi funciona el hf_loeader.py:
-
-        #   __init__ ( Clase para conectarse a Hugging Face Hub, obtener un dataset, retornarlo como pandas DataFrame y opcionalmente exportarlo a CSV ) 
-        # Inicializa el cargador con la configuración del dataset.
-        # :param dataset_name: Identificador del dataset en HF (por defecto: 'eatpizzanot/soccer-dataset').
-        # :param name: Subconjunto o tabla del dataset (ej. 'players', 'teams', 'match_stats').
-        # :param split: Split a cargar (ej. 'train', 'test'). Si es None, carga el split por defecto.
-        
-        #  load_data ( Método para cargar los datos desde Hugging Face y retornarlos como DataFrame de pandas )
-        # :return: pd.DataFrame con los datos obtenidos.
-
-        # to_csv ( Obtiene el DataFrame y lo exporta a un archivo CSV dentro de una carpeta )
-        # :param output_folder: Nombre de la carpeta destino.
-        # :param filename: Nombre personalizado del archivo .csv (sin extensión).
-        # :param index: Indica si se incluye el índice de pandas en el CSV.
-        # :return: Ruta completa del archivo generado.
-
-
-        > [!TIP] ANOTACIONES IMPORTANTES DE ESTA PRIMER ENTREGA:
-        # - Se utiliza la librería 'datasets' de Hugging Face para la conexión y descarga de datasets.
-        # - Se utiliza 'pandas' para la manipulación de datos y la exportación a CSV.
-        # - Se maneja la creación de carpetas automáticamente si no existen segun el nombre del la tabla o el dataset.
-        # - Se captura y maneja cualquier error durante la carga del dataset, proporcionando mensajes claros.
-        # - Se permite la carga de datasets con múltiples splits, tomando el primer split disponible si no se especifica uno.
-
-### """
-### Explicación de la transformación:
-### En este flujo se realizó una transformación mínima consistente en:
-### 1. Renombrar las columnas 'name', 'type' y 'country' a castellano ('nombre_liga', 'tipo_liga', 'pais').
-### 2. Filtrar y seleccionar únicamente 4 columnas de interés ('league_id', 'nombre_liga', 'tipo_liga', 'pais').
-### 
-### Este DataFrame transformado fue enviado a la clase `DatasetSummarizer`, generando el reporte 'resumen_transformado.txt'
-### basado estrictamente en los datos modificados.
-### """
+Se utiliza inteligencia artificial, gemini para la mejora del archivo README.TXT 

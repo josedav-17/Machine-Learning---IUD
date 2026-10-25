@@ -5,7 +5,7 @@ Cantidad de Filas    : 283,834
 Cantidad de Columnas : 39
 --------------------------------------------------------------------------------
 
-1. ESTRUCTURA DE LAS COLUMNAS Y VALORES NULOS:
+ ESTRUCTURA DE LAS COLUMNAS Y VALORES NULOS:
 --------------------------------------------------------------------------------
                           Tipo de Dato  Valores Nulos  % Nulos
 fixture_id                       int64              0    0.00%
@@ -49,7 +49,7 @@ xg_nulled                       object          84629   29.82%
 known_at                datetime64[us]              0    0.00%
 --------------------------------------------------------------------------------
 
-2. ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS):
+ ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS):
 --------------------------------------------------------------------------------
                            count          mean           std   min        25%        50%        75%           max
 fixture_id              283834.0  3.522135e+06  1.776583e+07   1.0  153318.25  251342.50  348250.75  1.015678e+08
@@ -87,7 +87,7 @@ home_xg_ht                   0.0           NaN           NaN   NaN        NaN   
 away_xg_ht                   0.0           NaN           NaN   NaN        NaN        NaN        NaN           NaN
 --------------------------------------------------------------------------------
 
-3. ESTADÍSTICAS DESCRIPTIVAS (CATEGÓRICAS):
+ ESTADÍSTICAS DESCRIPTIVAS (CATEGÓRICAS / TEXTO):
 --------------------------------------------------------------------------------
              count unique    top    freq
 in_csv      283834      2   True  254939
@@ -96,7 +96,7 @@ xg_covered  283834      2   True  198376
 xg_nulled   199205      2  False  128771
 --------------------------------------------------------------------------------
 
-4. VISTA PREVIA DE LOS DATOS (HEAD):
+ ISTA PREVIA DE LOS DATOS (HEAD):
 --------------------------------------------------------------------------------
    fixture_id  home_shots_total  away_shots_total  home_shots_on_goal  away_shots_on_goal  home_shots_inside_box  away_shots_inside_box  home_shots_outside_box  away_shots_outside_box  home_blocked_shots  away_blocked_shots  home_penalties  away_penalties  home_corners  away_corners  home_yellow_cards  away_yellow_cards  home_red_cards  away_red_cards  home_xg  away_xg  home_possession  away_possession  home_fouls  away_fouls  home_offsides  away_offsides  home_pass_accuracy  away_pass_accuracy  home_goals_ht  away_goals_ht  home_xg_ht  away_xg_ht stats_fetched_at  in_csv  in_pq  xg_covered xg_nulled            known_at
 0      287142              10.0               5.0                 6.0                 3.0                    0.0                    0.0                     0.0                     0.0                 0.0                 0.0             1.0             0.0          12.0           3.0                5.0                1.0             1.0             0.0      NaN      NaN              NaN              NaN         NaN         NaN            NaN            NaN                 NaN                 NaN            0.0            0.0         NaN         NaN              NaT    True   True       False      True 2017-08-21 19:45:00
