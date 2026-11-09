@@ -1,0 +1,51 @@
+RESUMEN AUTOMÁTICO DE LA EJECUCIÓN
+========================================================================
+Fecha: 2026-11-08T21:18:12-05:00
+Pregunta de negocio: ¿Qué métricas cuantitativas durante un partido de fútbol (posesión, tiros a puerta y faltas) determinan con mayor probabilidad la victoria de un equipo?
+Beneficiario: cuerpo técnico, para orientar el análisis de partidos y la planificación de entrenamientos.
+Dataset: eatpizzanot/soccer-dataset, configuración match_stats; https://huggingface.co/datasets/eatpizzanot/soccer-dataset
+Fuente del resultado final: configuración fixtures, unida por fixture_id. Clases: victoria_local, empate y victoria_visitante.
+
+Tipo de aprendizaje: supervisado, clasificación de tres clases.
+Preprocesamiento: unión con resultados finales; se conservan partidos finalizados con goles disponibles; se excluyen identificadores, marcadores y goles al descanso de las variables predictoras; división estratificada 80/20 (semilla 42); imputación por mediana y estandarización ajustadas solo con X_train.
+Dimensiones antes de dividir: (280850, 28).
+Dimensiones de entrenamiento: (224680, 28)
+Dimensiones de prueba: (56170, 28)
+Cantidad de variables predictoras: 28
+Variables predictoras: tiros totales local, tiros totales visitante, tiros a puerta local, tiros a puerta visitante, tiros dentro del área local, tiros dentro del área visitante, tiros fuera del área local, tiros fuera del área visitante, tiros bloqueados local, tiros bloqueados visitante, penaltis local, penaltis visitante, saques de esquina local, saques de esquina visitante, tarjetas amarillas local, tarjetas amarillas visitante, tarjetas rojas local, tarjetas rojas visitante, goles esperados local, goles esperados visitante, posesión local, posesión visitante, faltas local, faltas visitante, fueras de juego local, fueras de juego visitante, precisión de pases local, precisión de pases visitante
+Distribución en entrenamiento: victoria_local=99399, victoria_visitante=67961, empate=57320
+Distribución en prueba: victoria_local=24850, victoria_visitante=16990, empate=14330
+
+Modelo final: bosque aleatorio de clasificación.
+Parámetros: n_estimators=100, max_depth=10, random_state=42.
+Comparación de parámetros en una muestra estratificada de entrenamiento/validación (20.000/5.000 observaciones; F1 ponderada):
+n_estimators=50, max_depth=5: 0.4153
+n_estimators=50, max_depth=10: 0.4637
+n_estimators=50, max_depth=15: 0.4783
+n_estimators=100, max_depth=10: 0.4642
+
+Medidas calculadas en el conjunto de prueba:
+Exactitud: 0.5422
+Precisión ponderada: 0.5359
+Sensibilidad ponderada: 0.5422
+Medida F1 ponderada: 0.4655
+Referencia de exactitud al elegir siempre la clase más frecuente: 0.4424
+
+Matriz de confusión (filas: resultado real; columnas: resultado predicho):
+                    empate  victoria_local  victoria_visitante
+empate                 562           10686                3082
+victoria_local         224           22542                2084
+victoria_visitante     375            9261                7354
+
+Diez variables con mayor importancia:
+tiros a puerta visitante: 0.2529
+tiros a puerta local: 0.2515
+penaltis local: 0.0597
+penaltis visitante: 0.0458
+goles esperados visitante: 0.0380
+goles esperados local: 0.0356
+tiros dentro del área visitante: 0.0300
+tiros totales local: 0.0265
+saques de esquina local: 0.0245
+tiros totales visitante: 0.0241
+========================================================================
